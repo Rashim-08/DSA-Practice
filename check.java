@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class check {
     static int Maxarea(int a,int b){
         return a*b;
@@ -78,29 +81,65 @@ public class check {
 
 
 
-    String haystack = "hello";
-    String needle = "ll";
+//     String haystack = "hello";
+//     String needle = "ll";
 
-      int i=0;
+//       int i=0;
 
 
-      while(i<haystack.length()){
+//       while(i<haystack.length()){
     
-        System.out.println(haystack.charAt(i)+","+needle.charAt(0));
+//         System.out.println(haystack.charAt(i)+","+needle.charAt(0));
         
-        if(haystack.charAt(i)==needle.charAt(0)){
-            int f=0;
-            for(int k=0;k<needle.length();k++){
-                if(haystack.charAt(i+k)==needle.charAt(f)){
-                    f++;
-                }
+//         if(haystack.charAt(i)==needle.charAt(0)){
+//             int f=0;
+//             for(int k=0;k<needle.length();k++){
+//                 if(haystack.charAt(i+k)==needle.charAt(f)){
+//                     f++;
+//                 }
                 
-            }
-         if(f==needle.length())break;
-        }
-        i++;
-      }
-      if(i==haystack.length())i=-1;
-    System.out.println(i);
-    }
-}
+//             }
+//          if(f==needle.length())break;
+//         }
+//         i++;
+//       }
+//       if(i==haystack.length())i=-1;
+//     System.out.println(i);
+//     
+// 
+
+
+
+
+// MY LOGIC FOR THE LONGEST COMMON SUBSTRING
+//         String s="rrrrrr";
+//         Set <Character> set =new HashSet<>();
+
+//         int c=0;
+//         int i=0;
+//         int count=0;
+
+//         while(i<s.length() && (s.length()-i)>=c){
+//                 if( i<s.length()-1 && s.charAt(i)!=s.charAt(i+1)){
+                
+//                             for(int f=0;f<s.length()-i;f++){
+//                                 char ch=s.charAt(f+i);
+//                                 if(set.contains(ch)){
+//                                     c=Math.max(c,set.size());
+//                                     set.clear();
+//                                     break;
+//                                 }
+//                                 set.add(ch);
+                                
+//                             }
+//                             c=Math.max(c,set.size());
+//                                     set.clear();
+//                     i++;
+//                 }
+//                 else i++;
+//                 c=Math.max(c,set.size());
+//                 set.clear();
+//         }
+//         System.out.println(c);
+//     }
+// }
