@@ -143,3 +143,60 @@ public class check {
 //         System.out.println(c);
 //     }
 // }
+
+
+
+//Practice----43
+ String num1="498828660196";
+ String num2="840477629533";
+ if(num1.equals("0") || num2.equals("0")){
+ System.out.println("0");;
+ }
+  String p="";
+ 
+  long k=0;
+ 
+     for(int j=0;j<num1.length();j++) {
+        int i=0;
+        while(i<10){
+          if(num1.charAt(j)==(char)(i+'0')){
+            System.out.println("-"+i);
+            k=(long)(i*(Math.pow(10, num1.length()-j-1)))+k;
+            System.out.println(k);
+            break;
+          }
+          i++;    
+     }
+    }
+    System.out.println("--"+k);
+    long z=0;
+     for(int j=0;j<num2.length();j++) {
+        int i=0;
+        while(i<10){
+          if(num2.charAt(j)==(char)(i+'0')){
+            System.out.println("-"+i);
+            z=(long)(i*(Math.pow(10, num2.length()-j-1)))+z;
+            System.out.println(z);
+            break;
+          }
+          i++;    
+     }
+    }
+      k=k*z;
+      System.out.println("/"+k);
+      while(k>0){
+        p=(char)(k%10+'0')+p;
+        k=k/10;
+     }
+    System.out.println(p);
+    int x=0;
+     if(num1.startsWith("-") && num2.startsWith("-"))x=0;
+     else if((num1.startsWith("-") && num2.startsWith("")) || (num1.startsWith("") && num2.startsWith("-")))x=1;
+   
+     if(x==1){
+        p= "-"+ p;
+     }
+    
+     System.out.println(p);
+    }
+}
