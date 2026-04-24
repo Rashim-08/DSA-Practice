@@ -100,7 +100,7 @@ public class check2 {
                 nums[temp-1]=temp;
             }
     }
-    //hell
+    //hell-0
     
     for(int i=0;i<n;i++){
         if(nums[i]!=i+1){
