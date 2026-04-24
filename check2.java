@@ -100,6 +100,8 @@ public class check2 {
                 nums[temp-1]=temp;
             }
     }
+    //hell
+    
     for(int i=0;i<n;i++){
         if(nums[i]!=i+1){
             System.out.println(i);
