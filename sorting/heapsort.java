@@ -47,6 +47,6 @@ public class heapsort {
     public static void main(String[] args) {
         int []a={7,2,3,1,6,8};
         Heapsort h=new Heapsort(a);
-        h.sort();
+        h.sort();q
     }
 }
