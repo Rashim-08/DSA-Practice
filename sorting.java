@@ -1,5 +1,4 @@
 
-import java.util.ArrayList;
 
 
 
@@ -71,7 +70,6 @@ public class sorting {
 
     //     while(j>=0 && a[j]>key){
     //         System.out.println();
-            
     //         a[j+1]=a[j];
     //         for(int x:a){
     //         System.out.print(x+" ");
@@ -87,36 +85,64 @@ public class sorting {
     //     }
 
 //MERGE SORTING
-    static void merge(int[] a,int l,int mid,int h){
-        ArrayList <Integer> temp=new ArrayList<>();
-        int left=l,right=mid+1;
-        while(left<=mid && right<=h){
-            if(a[left]<=a[right]){
-               temp.add(a[left++]);
-            }
-            else{
-                temp.add(a[right++]);}
-        }
-        while(left<=mid){
-           temp.add(a[left++]);
-        }
-        while(right<=h){
-            temp.add(a[right++]);
-        }
-        for(int i=l;i<=h;i++){
-            a[i]=temp.get(i-l);
-        }
-    }
-    static void mergesort(int[] a,int l,int h){
-       int mid=(l+h)/2;
-       if(l>=h)return;
-       mergesort(a, l, mid);
-       mergesort(a, mid+1, h);
-       merge(a, l, mid, h);
-       
+    // static void merge(int[] a,int l,int mid,int h){
+    //     ArrayList <Integer> temp=new ArrayList<>();
+    //     int left=l,right=mid+1;
+    //     while(left<=mid && right<=h){
+    //         if(a[left]<=a[right]){
+    //            temp.add(a[left++]);
+    //         }
+    //         else{
+    //             temp.add(a[right++]);}
+    //     }
+    //     while(left<=mid){
+    //        temp.add(a[left++]);
+    //     }
+    //     while(right<=h){
+    //         temp.add(a[right++]);
+    //     }
+    //     for(int i=l;i<=h;i++){
+    //         a[i]=temp.get(i-l);
+    //     }
+    // }
+    // static void mergesort(int[] a,int l,int h){
+    //    int mid=(l+h)/2;
+    //    if(l>=h)return;
+    //    mergesort(a, l, mid);
+    //    mergesort(a, mid+1, h);
+    //    merge(a, l, mid, h);
+    // }
 
-    }
+    // static void rebubble(int[] a,int n){
+    //     if(n==1) return;
+    //     for(int i=0;i<n-1;i++){
+    //         if(a[i]>a[i+1]){
+    //             int temp=a[i];
+    //             a[i]=a[i+1];
+    //             a[i+1]=temp;
+    //         }
+    //     }
+    //     rebubble(a, --n);
+    // }
 
+//QUICK SORTING
+    static void quick(int[]a,int low,int high){
+        if(low>=high)return;
+        int pivot =(low+high)/2;
+        int  i=low,j=high;
+        while(i<=j){
+            while(a[i]<=a[pivot])i++;
+            while(a[j]>=a[pivot])j--;
+            int temp=a[i];
+            a[i]=a[j];
+            a[j]=temp;
+        }
+        int temp=a[i];
+        a[i]=a[pivot];
+        a[pivot]=temp;
+        quick(a,low,pivot-1);
+        quick(a,pivot+1,high);
+    }
       
 
        
@@ -128,8 +154,10 @@ public class sorting {
     //selection(arr);
     //bubble(arr);
     //insertion(arr);
-    mergesort(arr1, 0, arr1.length-1);
-    for(int x:arr1){
+    //mergesort(arr1, 0, arr1.length-1);
+    //rebubble(arr,arr.length);
+    quick(arr, 0, arr.length);
+    for(int x:arr){
         System.out.print(x+" ");
     }
     }
