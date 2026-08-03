@@ -1,8 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
+
+import java.util.HashMap;
 
 public class array {
     // static boolean check(int[] nums) {
@@ -62,44 +59,115 @@ public class array {
     // }
 
 //union using map:
-    static List<Integer> union1(int[] a, int[] b) {
-        TreeMap<Integer,Integer> map=new TreeMap<>();
-        for(int i=0;i<a.length;i++){
-            map.put(a[i],map.getOrDefault(a[i],0)+1);
-        }
-        for(int i=0;i<b.length;i++){
-            map.put(a[i],map.getOrDefault(a[i],0)+1);
-        }
+//     static List<Integer> union1(int[] a, int[] b) {
+//         TreeMap<Integer,Integer> map=new TreeMap<>();
+//         for(int i=0;i<a.length;i++){
+//             map.put(a[i],map.getOrDefault(a[i],0)+1);
+//         }
+//         for(int i=0;i<b.length;i++){
+//             map.put(a[i],map.getOrDefault(a[i],0)+1);
+//         }
 
-        List<Integer> list=new ArrayList<>();
-        for(int x:map.keySet()){
-            list.add(x);
-        }
-        return list;
-}
+//         List<Integer> list=new ArrayList<>();
+//         for(int x:map.keySet()){
+//             list.add(x);
+//         }
+//         return list;
+// }
     
     
-    static List<Integer> union2(int[] a,int[] b){
+//     static List<Integer> union2(int[] a,int[] b){
 
-        Set<Integer> st=new TreeSet<>();
-        for(int i:a){
-            st.add(i);
+//         Set<Integer> st=new TreeSet<>();
+//         for(int i:a){
+//             st.add(i);
+//         }
+//         for(int i:b){
+//             st.add(i);
+//         }
+//         return new ArrayList<>(st);
+//     }
+//     static int find(int[] a){
+//         int sum=1;
+//         int s=0;
+//         for(int i=0;i<a.length;i++){
+//             s=s+a[i];
+//             sum=sum+(i+2);
+//         }
+//         return sum-s;
+//     }
+
+//   static int XOR(int[] a){
+//     int xorr=0;
+//     for(int i:a){
+//         System.out.print(xorr+"^"+i+"=");
+//         xorr ^=i;
+//         System.out.println(xorr);
+//     }
+//     return xorr;
+//   }
+
+    static int sub(int[] a,int k){
+        int n=a.length;
+        int right=0,left=0;
+        int maxlen=0;
+        int sum=a[0];
+
+        while(right<n){
+
+            while(left<=right && sum>k){
+                sum-=a[left];
+                left++;
+            }
+            System.out.println(sum);
+            if(sum==k){
+                maxlen=Math.max(maxlen,right-left+1);
+            }
+
+            right++;
+            if(right<n){
+                sum+=a[right];
+            }
         }
-        for(int i:b){
-            st.add(i);
-        }
-        return new ArrayList<>(st);
+        return maxlen;
     }
-    static int find(int[] a){
-        int sum=1;
-        int s=0;
+    static int sub1(int[] a,int k){
+        int maxlen=0;
+        int sum=0;
         for(int i=0;i<a.length;i++){
-            s=s+a[i];
-            sum=sum+(i+2);
+            sum=a[i];
+            for(int j=i+1;j<a.length;j++){
+                sum=sum+a[j];
+                if(sum==k){maxlen=Math.max(maxlen,j-i+1);}
+            }
         }
-        return sum-s;
+        return maxlen;
     }
 
+    static int[] sortColors(int[] a) {
+       int low=0;
+       int mid=0;
+       int high=a.length-1;
+
+       while(mid<=high){
+        System.out.println(a[mid]);
+        if(a[mid]==0){
+            int temp=a[low];
+            a[low]=a[mid];
+            a[mid]=temp;
+            low++;
+            
+        }
+        if(a[mid]==2){
+            int temp1=a[mid];
+            a[mid]=a[high];
+            a[high]=temp1;
+            high--;
+        }
+        if(a[mid]==1)mid++;
+       }
+       return a;
+    }
     public static void main(String[] args) {
         // int arr1[]={4,7,2,3,9,7,0};
         // int arr2[]={1,4,7,2,9,6,0,3,5,7};
@@ -110,9 +178,20 @@ public class array {
     //    System.out.println(union1(arr2, arr2));
     //    System.out.println(union2(arr2, arr2));
 
-    int arr[]={1,2,3,4,6};
-    System.out.println(find(arr));
+    int arr[]={2,0,2,1,1,0};
+    // System.out.println(sub(arr,10));
+        sortColors(arr);
+        for(int i:arr){
+            System.out.println(i);
+        }
+    // System.out.println(sub1(arr,10));
+    // Arrays.sort(arr);
+    // for(int i:arr){
+    //     System.out.println(i);
+    // }
 
+    HashMap<Integer,Integer> map=new HashMap<>();
+    
         
     }
 }
