@@ -1,6 +1,4 @@
 
-import java.util.HashMap;
-
 public class array {
     // static boolean check(int[] nums) {
     //     int count=0;
@@ -180,18 +178,73 @@ public class array {
 
     int arr[]={2,0,2,1,1,0};
     // System.out.println(sub(arr,10));
-        sortColors(arr);
-        for(int i:arr){
-            System.out.println(i);
-        }
+       // sortColors(arr);
+        // for(int i:arr){
+        //     System.out.println(i);
+        // }
     // System.out.println(sub1(arr,10));
     // Arrays.sort(arr);
     // for(int i:arr){
     //     System.out.println(i);
     // }
 
-    HashMap<Integer,Integer> map=new HashMap<>();
+    //HashMap<Integer,Integer> map=new HashMap<>();
+    // int a[]={10, 22, 12, 3, 0, 6};
+    // int pos=a[a.length-1];
+    // ArrayList<Integer> n=new ArrayList<>();
+    // n.add(pos);
+    // for(int i=a.length-1-1;i>=0;i--){
+    //     if(a[i]-pos>0){
+    //         pos=a[i];
+    //         n.add(pos);
+    //     }
+    // }
+    // Collections.reverse(n);
+    // System.out.println(n);
     
+//      int a[][]={{1,0,1},{1,0,1},{1,1,1}};
+//      int x=1;
+//      int y=1;
+//      for(int i=0;i<a.length;i++){
+//         if(a[i][0]==0)x=0;
+//      }
+//      for(int i=0;i<a[0].length;i++){
+//         if(a[0][i]==0)y=0;
+//      }
+     
+//      for(int i=0;i<a.length;i++){
+//         for(int j=1;j<a[0].length;j++){
+//             if(a[i][j]==0){
+//                 a[0][j]=0;
+//                 a[i][0]=0;
+//             }
+//         }
+//      }
+
+//  for(int i=1;i<a.length;i++){
+//         for(int j=1;j<a[0].length;j++){
+//            if(a[0][j]==0)a[i][j]=0;
+//            if(a[i][0]==0)a[i][j]=0;
+//         }
+        
+//      }
+
+//      for(int i=0;i<a.length;i++){
+//         if(x==0)a[i][0]=0;
+//      }
+//      for(int i=0;i<a[0].length;i++){
+//         if(y==0)a[0][i]=0;
+//      }
+
+//       for(int i=0;i<a.length;i++){
+//         for(int j=0;j<a[0].length;j++){
+//            System.out.print(a[i][j]);
+//         }
+//         System.out.println();
+//      }
+
+    
+
         
     }
 }
