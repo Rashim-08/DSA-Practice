@@ -1,4 +1,3 @@
-
 public class array {
     // static boolean check(int[] nums) {
     //     int count=0;
@@ -243,8 +242,129 @@ public class array {
 //         System.out.println();
 //      }
 
-    
+    //int a[][]={{1,2,3},{4,5,6},{7,8,9}};
+    // int m[]=new int[a.length];
+    // int k=0;
+    // int i,j;
+    // int n=a.length;
+    // int f;
+    // int temp;
+    // while(k<=(n-1)/2){
+    //     i=k;
+    //     j=k;
+    //     f=0;
+    //     while(j<n-k){
+    //         m[f]=a[i][j];
+           
+    //         f++;
+    //         j++;
+    //     }
+       
+    //     j--;
+    //     f=0;
+    //     while(i<n-k){
+    //         temp=a[i][j];
+    //         a[i][j]=m[f];
+    //         m[f]=temp;
+            
+    //         f++;
+    //         i++;
+    //     }
+      
+    //     i--;
+    //     f=0;
+    //     while(j>=k){
+    //          temp=a[i][j];
+    //         a[i][j]=m[f];
+    //         m[f]=temp;
+           
+    //         f++;
+    //         j--;
+    //     }
+       
+    //     j++;
+    //     f=0;
+    //     while(i>=k){
+    //          temp=a[i][j];
+    //         a[i][j]=m[f];
+    //         m[f]=temp;
+           
+    //         f++;
+    //         i--;
+    //     }
+      
+    //     i++;
+    //     f=0;
+    //     while(j<n-k){
+    //         a[i][j]=m[f];
+           
+    //         f++;
+    //         j++;
+    //     }
+       
+    //     k++;
+    // }
+    // for(int h=0;h<n;h++){
+    //     System.out.println("-");
+    //     for(int s=0;s<n;s++){
+    //         System.out.println(a[h][s]);
+            
+    //     }
+    // }
 
-        
+    // int a[][]={{1,2,3},{4,5,6},{7,8,9}};
+    // int i=0,j=0;
+    // int k=0;
+    // int m=a.length;
+    // ArrayList<Integer> q=new ArrayList<>();
+    // int n=a[0].length;
+    //     while (k<=(m/2)) { 
+            
+    //         while(j<n-k){
+    //             q.add(a[i][j]);
+    //             j++;
+    //         }
+    //         j--;
+    //         i++;
+
+    //         while(i<m-k){
+    //             q.add(a[i][j]);
+    //             i++;
+    //         }
+    //         i--;
+    //         j--;
+
+    //         while(j>=k){
+    //             q.add(a[i][j]);
+    //             j--;
+    //         }
+    //         j++;
+    //         i--;
+
+    //         while(i>k){
+    //             q.add(a[i][j]);
+    //             i--;
+    //         }
+    //         i++;
+    //         j++;
+    //         k++;
+    //     }
+
+    //   for(int o:q){
+    //     System.out.println(o);
+    //   }  
+
+    int a[]={5,6,7,10,33,45,98,22,101,100,78};
+    int max1=Integer.MIN_VALUE,max2=Integer.MIN_VALUE;
+    for(int i:a){
+        if(i>max1){
+            max2=max1;
+            max1=i;
+        }
+        else if(i>max2 && i!=max1){
+            max2=i;
+        }
+    }
+    System.out.println(max2);
     }
 }
